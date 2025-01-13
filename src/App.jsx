@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Header from './components/Header'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <main className='overflow-hidden text-tertiary'>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/collection" element={<Collection />} />
+        <Route path='/Blog' element={<Blog />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </main>
   )
 }
 
