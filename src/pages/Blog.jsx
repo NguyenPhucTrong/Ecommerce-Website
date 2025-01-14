@@ -8,4 +8,4 @@ const Blog = () => {
     )
 }
 
-export default Blog
+expo

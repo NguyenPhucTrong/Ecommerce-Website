@@ -8,4 +8,4 @@ const Collection = () => {
     )
 }
 
-export default Collection
+expo
