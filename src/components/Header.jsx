@@ -13,7 +13,7 @@ const Header = () => {
             {/* Logo */}
 
             <div className='flexBetween py-3'>
-                <Link to="/" className=" flex flex-1 bold-28">
+                <Link to="/" className=" flex flex-1 bold-24 xl:bold-28">
                     E-commerce
                 </Link>
 
