@@ -28,4 +28,39 @@ const Header = () => {
                 {/* Button */}
                 <div className='flex-1 flex items-center justify-end gap-x-2 xs:gap-x-8'>
 
-                    {/* Menu Toggle */
+                    {/* Menu Toggle */}
+                    <>
+                        {menuOpened ? (
+                            < FaBarsStaggered onClick={toggleMenu}
+                                className='xl:hidden cursor-pointer text-xl' />
+                        ) : (
+                            < FaBars onClick={toggleMenu}
+                                className='xl:hidden cursor-pointer text-xl' />
+                        )}
+
+                    </>
+
+                    {/* Cart */}
+                    <Link to={'/cart'} className='flex relative'>
+                        <div className='ring-1 ring-slate-900 rounded-full px-3 bold-18'>
+                            Cart
+                            <span className='bg-secondary text-white text-[12px] font-semibold absolute -top-3.5 -right-2 flexCenter w-4 h-3 rounded-md'>0</span>
+                        </div>
+                    </Link>
+
+                    {/* User Profile */}
+                    <div className='group relative'>
+
+                        <button className='btn-dark flexCenter gap-x-2'>
+                            Login
+                            <RiUserLine className='text-xl' />
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+    )
+}
+
+export default Header
