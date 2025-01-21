@@ -7,4 +7,9 @@ const Title = ({ title1, title2, titleStyles, title1Styles, paraStyles }) => {
                 {title1}
                 <span className='text-secondary !font-light underline '>{title2}</span>
             </h2>
-            <p className={`${paraStyles} hidden`}>Discover the best deals on top^
+            <p className={`${paraStyles} hidden`}>Discover the best deals on top^quality products, Crafted to elevate your everyday experience</p>
+        </div>
+    )
+}
+
+export default Title
