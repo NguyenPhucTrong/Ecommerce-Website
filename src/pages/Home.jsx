@@ -7,6 +7,7 @@ import About from '../components/About'
 import Blog from '../components/Blog'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
+import PopularProducts from '../components/PopularProducts'
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Hero />
             <Features />
             <NewArrivals />
+            <PopularProducts />
             <Banner />
             <About />
             <Blog />
