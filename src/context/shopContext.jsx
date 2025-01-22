@@ -7,4 +7,10 @@ const ShopContextProvider = (props) => {
     const value = { products }
 
     return (
-        <Shop
+        <ShopContext.Provider value={value}>
+            {props.children}
+        </ShopContext.Provider>
+    )
+}
+
+export default ShopContextProvider
