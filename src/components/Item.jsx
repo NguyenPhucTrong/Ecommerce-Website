@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { products } from '../assets/data'
 import { Link } from 'react-router-dom'
 
 const Item = ({ product }) => {
+    const [hovered, setHovered] = useState(false)
+
     return (
         <div className='overflow-hidden'>
 
             {/* IMAGE */}
 
-            <Link to={'/'} className='flexCenter p-2 bg-[#f5f5f5] overflow-hidden relative'>
-                <img src={product.image[0]} alt="productImg" className='transition-all duration-300' />
+            <Link to={'/'}
+                onMouseEnter={(e) => setHovered(true)}
+                onMouseLeave={(e) => setHovered(false)}
+                className='flexCenter p-2 bg-[#f5f5f5] overflow-hidden relative'>
+                <img src={product.image.length > 1 && hovered ? product.image[1] : product.image[0]} alt="productImg" className='transition-all duration-300' />
             </Link>
 
             {/* INFO */}

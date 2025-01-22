@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -12,16 +12,22 @@ import { Autoplay } from 'swiper/modules';
 import Title from './Title';
 import Item from './Item';
 import { products } from '../assets/data';
+import { ShopContext } from '../context/shopContext';
 
 const NewArrivals = () => {
+    const { products } = useContext(ShopContext)
     const [PopularProducts, setPopularProducts] = useState([])
     useEffect(() => {
         const data = products.slice(0, 7)
         setPopularProducts(data)
     }, [products])
     return (
-        <section>
-            <Title title1={"New"} title2={"Arrivals"} titleStyles={"pd-10"} paraStyles={"!block"} />
+        <section className='max-padd-container pt-16'>
+            <Title
+                title1={"New"}
+                title2={"Arrivals"}
+                titleStyles={"pd-10"}
+                paraStyles={"!block"} />
 
             {/* CONTAINER */}
             <Swiper
