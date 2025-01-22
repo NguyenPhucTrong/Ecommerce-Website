@@ -27,7 +27,7 @@ const NewArrivals = () => {
                 title1={"New"}
                 title2={"Arrivals"}
                 titleStyles={"pd-10"}
-                paraStyles={"!block"} />
+                paraStyles={"!block !pb-10"} />
 
             {/* CONTAINER */}
             <Swiper
