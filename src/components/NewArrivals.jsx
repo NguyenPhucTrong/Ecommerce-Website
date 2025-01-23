@@ -27,7 +27,7 @@ const NewArrivals = () => {
                 title1={"New"}
                 title2={"Arrivals"}
                 titleStyles={"pd-10"}
-                paraStyles={"!block !pb-10"} />
+                paraStyles={"!block"} />
 
             {/* CONTAINER */}
             <Swiper
@@ -55,7 +55,7 @@ const NewArrivals = () => {
                 }}
 
                 modules={[Autoplay]}
-                className="h-[399px] mt-5"
+                className="h-[399px]"
             >{
                     PopularProducts.map((product) => {
                         return (
