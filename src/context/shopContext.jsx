@@ -7,7 +7,7 @@ export const ShopContext = createContext()
 const ShopContextProvider = (props) => {
     const [search, setSearch] = useState("")
     const navigate = useNavigate()
-    const value = { products, search }
+    const value = { products, search, setSearch }
 
     return (
         <ShopContext.Provider value={value}>

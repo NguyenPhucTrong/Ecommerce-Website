@@ -1,10 +1,54 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Search from '../components/Search'
 import { ShopContext } from '../context/shopContext';
 
 const Collection = () => {
 
     const { products } = useContext(ShopContext)
+    const [category, setCategory] = useState([])
+    const [sortType, setSortType] = useState('relevant')
+    const [filteredProducts, setFilteredProducts] = useState(second)
+    const [currentPages, setCurrentPages] = useState(1)
+    const itemsPerPage = 10
+
+    const toggleFilter = (value, setState) => {
+        setState((prev) => prev.includes(value) ?
+            prev.filter((item) => item !== value) :
+            [...prev, value])
+    }
+
+    const applyFilter = () => {
+        let filtered = [...products]
+        if (search) {
+            filtered = filtered.filter((product) =>
+                product.name.toLowerCase()
+                    .includes(search.toLowerCase()))
+        }
+        if (category.length) {
+            filtered = filtered.filter((product) =>
+                category.includes(product.category))
+        }
+        return filtered
+    }
+
+    const applySorting = (productList) => {
+        switch (sortType) {
+            case 'low':
+                return productList.sort((a, b) => a.price - b.price)
+            case 'high':
+                return productList.sort((a, b) => b.price - a.price)
+            default:
+                return productList
+        }
+
+    }
+
+    useEffect(() => {
+        let filtered = applyFilter()
+        let sorted = applySorting(filtered)
+        setFilteredProducts(sorted)
+        setCurrentPages(1)
+    }, [category, sortType, search, sortType])
 
     return (
         <div className='max-padd-container !px-0'>
