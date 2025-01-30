@@ -89,12 +89,12 @@ const Collection = () => {
                             }
                         </div>
                     </div>
-                    <div className='px-4 px-3 mt-6 bg-white rounded-xl'>
+                    <div className='px-4 mt-6 bg-white rounded-xl'>
                         <h5 className='h5 mb-4 '>
                             Sort by
                         </h5>
                         <select onChange={(e) => setSortType(e.target.value)}
-                            className='border border-slate-900/5 outline-none text-gray-30 medium-14 h-8 w-full rounded px-2'>
+                            className='border border-slate-900/10 outline-none text-gray-30 medium-14 h-8 w-full mb-4 rounded px-2'>
                             <option value="relevant">Relevant</option>
                             <option value="low">Low</option>
                             <option value="high">High</option>
@@ -106,7 +106,7 @@ const Collection = () => {
                     <div className='grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 gap-y-6'>
                         {getPaginatedProducts().length > 0 ? (
                             getPaginatedProducts().map((product) => (
-                                <Item key={product.id} product={product} />
+                                <Item key={product._id} product={product} />
                             ))
                         ) : (
                             <p>
@@ -117,7 +117,22 @@ const Collection = () => {
                     </div>
                     {/* PAGINATION */}
                     <div className='flexCenter flex-wrap gap-4 mt-14 mb-10'>
-                        <p>button</p>
+                        <button disabled={currentPage === 1} onClick={() => setCurrentPage((prev) => prev - 1)}
+                            className={`${currentPage === 1 && "opacity-50 cursor-not-allowed"} btn-secondary !py-1 !px-3`}>
+                            Previous
+                        </button>
+                        {
+                            Array.from({ length: totalPages }, (_, idx) => (
+                                <button key={idx + 1} onClick={() => setCurrentPage(idx + 1)}
+                                    className={`${currentPage === idx + 1 && 'bg-tertiary text-white'} btn-light !py-1 !px-3`}>
+                                    {idx + 1}
+                                </button>
+                            ))
+                        }
+                        <button disabled={currentPage === totalPages} onClick={() => setCurrentPage((prev) => prev + 1)}
+                            className={`${currentPage === totalPages && "opacity-50 cursor-not-allowed"} btn-secondary !py-1 !px-3`}>
+                            Next
+                        </button>
                     </div>
                 </div>
             </div>
