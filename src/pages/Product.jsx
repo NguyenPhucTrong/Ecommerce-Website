@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import { use } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/shopContext'
-import { FaStar } from 'react-icons/fa'
-import { FaStarHalfStroke } from 'react-icons/fa6'
+import { FaCheck, FaHeart, FaStar } from 'react-icons/fa'
+import { FaStarHalfStroke, FaTruckFast } from 'react-icons/fa6'
+import { TbShoppingBagPlus } from 'react-icons/tb'
 
 const Product = () => {
     const { productId } = useParams();
@@ -77,18 +78,57 @@ const Product = () => {
                         <p className='max-w-[555px] '>
                             {product.description}
                         </p>
-                        <div>
-                            <div>
+                        <div className='flex flex-col gap-4 my-4 mb-5'>
+                            <div className='flex gap-2  '>
                                 {
                                     [...product.colors].map((item, index) => (
                                         <button key={index}
                                             onClick={() => setColor(item)}
-                                            className={`h-9 w-9 rounded-full flexCenter ring-10 ring-gray-50`}
+                                            className={`h-9 w-9 rounded-full flexCenter ring-1 ring-gray-50`}
                                             style={{ backgroundColor: item }}
-                                        ></button>
+                                        >
+                                            {item === color ?
+                                                (
+                                                    <FaCheck className={item === "white" ? "text-black" : "text-white"} />
+                                                )
+                                                :
+                                                (
+                                                    <div>
+                                                        test
+                                                    </div>
+                                                )}
+                                        </button>
                                     ))
                                 }
                             </div>
+                        </div>
+                        <div className='flex items-center gap-x-4'>
+                            <button className='btn-secondary !rounded-lg sm:w-1/2 flexCenter gap-x-2 capitalize'
+                                onClick={() => console.log('clicked')}
+                            >
+                                Add to Cart <TbShoppingBagPlus />
+                            </button>
+                            <button className="btn-white !rounded-lg !py-3.5">
+                                <FaHeart />
+                            </button>
+                        </div>
+                        <div className='flex items-center gap-x-2 mt-5'>
+                            <FaTruckFast className='text-lg' />
+                            <span className='medium-14'>
+                                Fast Delivery on orders over $500
+                            </span>
+                        </div>
+                        <hr className='my-3 w-2/3' />
+                        <div className='mt-2 flex flex-col gap-1 text-gray-30 text-[14px]'>
+                            <p>
+                                Authenticity You Can Trust
+                            </p>
+                            <p>
+                                Enjoy Cash on Delivery for Your Convenience
+                            </p>
+                            <p>
+                                Easy Returns and Exchanges Within 7 Days
+                            </p>
                         </div>
                     </div>
                 </div>
