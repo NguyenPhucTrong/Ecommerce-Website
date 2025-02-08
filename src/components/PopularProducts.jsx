@@ -32,4 +32,11 @@ const PopularProducts = () => {
                             </div>
                         )
                     }
-    
+                    )
+                }
+            </div>
+        </section>
+    )
+}
+
+export default PopularProducts
