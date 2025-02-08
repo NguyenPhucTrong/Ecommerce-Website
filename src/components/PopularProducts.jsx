@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Title from './Title'
 import { products } from '../assets/data'
 import Item from './Item'
@@ -32,11 +32,4 @@ const PopularProducts = () => {
                             </div>
                         )
                     }
-                    )
-                }
-            </div>
-        </section>
-    )
-}
-
-export default PopularProducts
+    

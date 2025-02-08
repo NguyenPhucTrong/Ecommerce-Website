@@ -11,7 +11,7 @@ import ProductFeatures from '../components/ProductFeatures'
 
 const Product = () => {
     const { productId } = useParams();
-    const { products, currency } = useContext(ShopContext)
+    const { products, currency, addToCart } = useContext(ShopContext)
     const [product, setProduct] = useState(null)
     const [img, setImg] = useState("")
     const [color, setColor] = useState("")
@@ -107,7 +107,7 @@ const Product = () => {
                         </div>
                         <div className='flex items-center gap-x-4'>
                             <button className='btn-secondary !rounded-lg sm:w-1/2 flexCenter gap-x-2 capitalize'
-                                onClick={() => console.log('clicked')}
+                                onClick={() => addToCart(product._id, color)}
                             >
                                 Add to Cart <TbShoppingBagPlus />
                             </button>
