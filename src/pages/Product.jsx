@@ -5,6 +5,9 @@ import { ShopContext } from '../context/shopContext'
 import { FaCheck, FaHeart, FaStar } from 'react-icons/fa'
 import { FaStarHalfStroke, FaTruckFast } from 'react-icons/fa6'
 import { TbShoppingBagPlus } from 'react-icons/tb'
+import ProductDescription from '../components/ProductDescription'
+import RelatedProducts from '../components/RelatedProducts'
+import ProductFeatures from '../components/ProductFeatures'
 
 const Product = () => {
     const { productId } = useParams();
@@ -94,7 +97,7 @@ const Product = () => {
                                                 :
                                                 (
                                                     <div>
-                                                        test
+
                                                     </div>
                                                 )}
                                         </button>
@@ -132,6 +135,9 @@ const Product = () => {
                         </div>
                     </div>
                 </div>
+                <ProductDescription />
+                <ProductFeatures />
+                <RelatedProducts category={product.category} />
             </div>
         </div>
     )
