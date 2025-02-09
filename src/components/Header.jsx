@@ -7,6 +7,7 @@ import { RiUserLine } from 'react-icons/ri'
 
 const Header = () => {
     const [menuOpened, setMenuOpened] = useState(false);
+    const { getCartTotal } = useContext(ShopContext)
     const toggleMenu = () => setMenuOpened((prev) => !prev);
     return (
         <header className='max-padd-container w-full mb-2'>
@@ -44,7 +45,9 @@ const Header = () => {
                     <Link to={'/cart'} className='flex relative'>
                         <div className='ring-1 ring-slate-900 rounded-full px-3 bold-18'>
                             Cart
-                            <span className='bg-secondary text-white text-[12px] font-semibold absolute -top-3.5 -right-2 flexCenter w-4 h-3 rounded-md'>0</span>
+                            <span className='bg-secondary text-white text-[12px] font-semibold absolute -top-3.5 -right-2 flexCenter w-4 h-3 rounded-md'>
+                                {getCartTotal()}
+                            </span>
                         </div>
                     </Link>
 
