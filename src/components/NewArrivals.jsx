@@ -26,7 +26,7 @@ const NewArrivals = () => {
             <Title
                 title1={"New"}
                 title2={"Arrivals"}
-                titleStyles={"pd-10"}
+                titleStyles={"pd-14"}
                 paraStyles={"!block"} />
 
             {/* CONTAINER */}
@@ -55,7 +55,7 @@ const NewArrivals = () => {
                 }}
 
                 modules={[Autoplay]}
-                className="h-[399px]"
+                className="h-[399px] mt-5"
             >{
                     PopularProducts.map((product) => {
                         return (

@@ -21,8 +21,8 @@ const Product = () => {
         if (selectedProduct) {
             setProduct(selectedProduct)
             setImg(selectedProduct.image[0])
+            setColor(selectedProduct.colors[0]) // Khởi tạo màu sắc đầu tiên
             console.log(selectedProduct)
-            // setColor(selectedProduct.colors[0])
         }
     }
 

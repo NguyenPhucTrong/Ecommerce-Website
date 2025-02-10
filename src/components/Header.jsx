@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Navbar from './Navbar'
 import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { FaBarsStaggered } from 'react-icons/fa6'
 import { RiUserLine } from 'react-icons/ri'
+import { ShopContext } from '../context/shopContext'
 
 const Header = () => {
     const [menuOpened, setMenuOpened] = useState(false);
