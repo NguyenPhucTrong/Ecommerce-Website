@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Title from '../components/Title'
 import { FaMinus, FaPlus, FaRegWindowClose } from 'react-icons/fa'
+import CartTotal from '../components/CartTotal'
+import Footer from '../components/Footer'
 
 export default function Cart() {
     const { products, currency, carItems, getCartTotal } = useContext(ShopContext)
@@ -38,13 +40,13 @@ export default function Cart() {
     }, [carItems, products])
 
     return (
-        <div>
-            <div>
-                <div>
+        <section >
+            <div className="bg-primary mb-16">
+                <div className='max-padd-container py-18 '>
                     {/* Title */}
-                    <div>
+                    <div className='flexStart gap-x-4'>
                         <Title title1={'Cart'} title2={"List"} title1Styles={"h3"} />
-                        <h5>{getCartTotal()} Items</h5>
+                        <h5 className='medium-15 text-gray-30 relative '>({getCartTotal()} Items)</h5>
                     </div>
                     {/* Container */}
                     {carData.map((item, index) => {
@@ -76,6 +78,9 @@ export default function Cart() {
                                                     <FaPlus />
                                                 </button>
                                             </div>
+                                            <h4>
+                                                {currency}{productData.price}
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +88,14 @@ export default function Cart() {
                         )
                     })}
                 </div>
+                <div>
+                    <div>
+                        <CartTotal />
+                        <button>Process to Checkout</button>
+                    </div>
+                </div>
             </div>
-        </div>
+            <Footer />
+        </section>
     )
 }
