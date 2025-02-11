@@ -14,12 +14,19 @@ export default function CartTotal() {
                     {currency} {getCartAmount()}.00
                 </p>
             </div>
-            <div>
-                <h5>Shipping Fee:</h5>
-                <p>
+            <hr className="mx-auto h-[1px] w-full bg-gray-900/5 my-1" />
+            <div className="flexBetween pt-3">
+                <h5 className='h5'>Shipping Fee:</h5>
+                <p className='h5'>
                     {getCartAmount() === 0 ? "0.00" : `${currency}${delivery_charges}.00`}
                 </p>
             </div>
-        </section>
-    )
-}
+            <hr className="mx-auto h-[1px] w-full bg-gray-900/5 my-1" />
+            <div className="flexBetween pt-3">
+                <h5 className='h5'>Total:</h5>
+                <p className='h5'>
+                    {currency}
+                    {getCartAmount() === 0 ? "0.00" : getCartAmount() + delivery_charges}
+                </p>
+            </div>
+    

@@ -83,7 +83,7 @@ const ShopContextProvider = (props) => {
         console.log("Updated cartItems:", cartItems)
     }, [cartItems])
 
-    const value = { products, search, setSearch, currency, delivery_charges, cartItems, setCartItems, addToCart, getCartTotal, updateQuantity, getCartAmount }
+    const value = { products, search, setSearch, currency, delivery_charges, cartItems, setCartItems, addToCart, getCartTotal, updateQuantity, getCartAmount, navigate }
     return (
         <ShopContext.Provider value={value}>
             {props.children}

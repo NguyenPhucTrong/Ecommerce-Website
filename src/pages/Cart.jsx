@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import { ShopContext } from '../context/shopContext'
 
 export default function Cart() {
-    const { products, currency, cartItems, getCartTotal, updateQuantity, getCartAmount } = useContext(ShopContext)
+    const { navigate, products, currency, cartItems, getCartTotal, updateQuantity, getCartAmount } = useContext(ShopContext)
 
     const [carData, setCarData] = useState([])
     const [quantities, setQuantities] = useState({})
@@ -115,7 +115,9 @@ export default function Cart() {
                 <div className='flex my-20'>
                     <div className='w-full m:w-[450px]'>
                         <CartTotal />
-                        <button className="btn-secondary mt-7">Process to Checkout</button>
+                        <button className="btn-secondary mt-7"
+                            onClick={() => navigate('/place-order')}
+                        >Process to Checkout</button>
                     </div>
                 </div>
             </div>

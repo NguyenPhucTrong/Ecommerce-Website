@@ -7,6 +7,8 @@ import Blog from './pages/Blog'
 import Product from './pages/Product'
 import { ToastContainer } from 'react-toastify'
 import Cart from './pages/Cart'
+import PlaceOthers from './pages/PlaceOthers'
+import Login from './pages/Login'
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
         <Route path='/Blog' element={<Blog />} />
         <Route path='/product/:productId' element={<Product />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path="/place-order" element={<PlaceOthers />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
 
     </main>
