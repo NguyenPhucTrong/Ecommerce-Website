@@ -52,11 +52,38 @@ const ShopContextProvider = (props) => {
         return totalCount
     }
 
+    const updateQuantity = async (itemId, color, quantity) => {
+        let carData = structuredClone(cartItems)
+        // if (carData[itemId]) {
+        //     if (carData[itemId][color]) {
+        carData[itemId][color] = quantity
+        //     }
+        // }
+        setCartItems(carData)
+    }
+
+    const getCartAmount = () => {
+        let totalAmount = 0;
+        for (const items in cartItems) {
+            let itemInfo = products.find((product) => product._id === items)
+            for (const item in cartItems[items]) {
+                try {
+                    if (cartItems[items][item] > 0) {
+                        totalAmount += itemInfo.price * cartItems[items][item]
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        }
+        return totalAmount
+    }
+
     useEffect(() => {
         console.log("Updated cartItems:", cartItems)
     }, [cartItems])
 
-    const value = { products, search, setSearch, currency, delivery_charges, cartItems, setCartItems, addToCart, getCartTotal }
+    const value = { products, search, setSearch, currency, delivery_charges, cartItems, setCartItems, addToCart, getCartTotal, updateQuantity, getCartAmount }
     return (
         <ShopContext.Provider value={value}>
             {props.children}
