@@ -21,13 +21,4 @@ function App() {
         <Route path="/collection" element={<Collection />} />
         <Route path='/Blog' element={<Blog />} />
         <Route path='/product/:productId' element={<Product />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path="/place-order" element={<PlaceOthers />} />
-        <Route path='/login' element={<Login />} />
-      </Routes>
-
-    </main>
-  )
-}
-
-export default App
+        <Route path='/car

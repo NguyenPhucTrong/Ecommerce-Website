@@ -118,10 +118,4 @@ export default function Cart() {
                         <button className="btn-secondary mt-7"
                             onClick={() => navigate('/place-order')}
                         >Process to Checkout</button>
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </section>
-    )
-}
+               
