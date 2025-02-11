@@ -91,4 +91,4 @@ const ShopContextProvider = (props) => {
     )
 }
 
-export default ShopContex
+export default ShopContextProvider
