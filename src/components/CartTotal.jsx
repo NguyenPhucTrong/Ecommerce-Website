@@ -29,4 +29,6 @@ export default function CartTotal() {
                     {getCartAmount() === 0 ? "0.00" : getCartAmount() + delivery_charges}
                 </p>
             </div>
-    
+        </section>
+    )
+}
