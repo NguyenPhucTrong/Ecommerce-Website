@@ -2,9 +2,16 @@ import React, { useState } from 'react'
 import Title from '../components/Title'
 import CartTotal from '../components/CartTotal'
 import Footer from '../components/Footer'
+import { toast } from 'react-toastify'
 
 export default function PlaceOthers() {
     const [method, setMethod] = useState('cod')
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Ngăn chặn reload trang nếu trong form
+        toast.success('Order Placed Successfully');
+    };
+
     return (
         <div>
             <div className='bg-primary mb-16'>
@@ -64,7 +71,7 @@ export default function PlaceOthers() {
                                 </div>
                             </div>
                             <div>
-                                <button type='submit' className='btn-secondary'>Place Other</button>
+                                <button type='submit' className='btn-secondary' onClick={handleSubmit}>Place Other</button>
                             </div>
                         </div>
                     </div>
