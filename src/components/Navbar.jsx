@@ -6,11 +6,10 @@ const Navbar = ({ containerStyles, onClick }) => {
         { path: '/', title: 'Home' },
         { path: '/collection', title: 'Collection' },
         { path: '/blog', title: 'Blog' },
-        { path: '/contact', title: 'Contact' },
 
     ];
     return (
-        <nav className={`${containerStyles}`}>
+        <nav className={`${containerStyles} `}>
             {
                 navLinks.map((link, index) => (
                     <NavLink

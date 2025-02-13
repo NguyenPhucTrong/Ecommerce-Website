@@ -20,7 +20,7 @@ const Header = () => {
                 </Link>
 
                 {/* Navbar */}
-                <div className='flex-1 '>
+                <div className='flex '>
                     <Navbar
                         containerStyles={`${menuOpened ? "flex items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white rounded-xl shadow-md w-52 ring-1 ring-slate-900/5 z-50" : "hidden xl:flex gap-x-5 xl:flex gap-x-7 medium-15 bg-primary ring-slate-900/5 rounded-full p-1"}`}
                         onClick={() => setMenuOpened(false)}

@@ -45,20 +45,21 @@ export default function Login() {
                         <div className='w-full flex flex-col gap-y-3'>
                             {currState === "Login" ? (
                                 <>
-                                    <div className='underline medium-15 cursor-pointer'>
+                                    <div className='underline medium-15 cursor-pointer pl-1'>
                                         Forgot your password?
                                     </div>
 
                                     <div className='underline medium-15 cursor-pointer pl-1'>
                                         Don't have an account?
-                                        <span onClick={() => setCurrState("Sign Up")} className='cursor-pointer'>Create account</span>
+                                        <span onClick={() => setCurrState("Sign Up")} className='cursor-pointer pl-2'>Create account</span>
+
                                     </div>
                                 </>
 
                             ) : (
                                 <div className='underline medium-15 cursor-pointer pr-1'>
                                     Already have an account?
-                                    <span onClick={() => setCurrState("Login")} className='cursor-pointer pl-1'>Login</span>
+                                    <span onClick={() => setCurrState("Login")} className='cursor-pointer pl-2'>Login</span>
                                 </div>
                             )}
                         </div>

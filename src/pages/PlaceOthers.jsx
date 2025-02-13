@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Title from '../components/Title'
 import CartTotal from '../components/CartTotal'
 import Footer from '../components/Footer'
@@ -10,9 +10,9 @@ export default function PlaceOthers() {
             <div className='bg-primary mb-16'>
                 {/* Container */}
                 <form className='max-padd-container py-10'>
-                    <div className=' flex-1 flex flex-col gap-3 text-[95%]'>
+                    <div className='  flex flex-col xl:flex-row gap-20 xl:gap-28 '>
                         {/* Left Side */}
-                        <div>
+                        <div className='flex-1 flex flex-col gap-3 text-[95%] '>
                             <Title title1={"Delivery"} title2={"Information"} />
                             <div className='flex gap-3'>
                                 <input type="text" name="firstName" placeholder='First Name'
@@ -52,12 +52,12 @@ export default function PlaceOthers() {
                                 <div className='flex gap-3'>
 
                                     <div onClick={() => setMethod('stripe')}
-                                        className={`${method === 'stripe' ? 'btn-dark' : 'bg-white'} !py-1 text-xs cursor-pointer`}>
+                                        className={`${method === 'stripe' ? 'btn-dark' : 'btn-white'} !py-1 text-xs cursor-pointer`}>
 
                                         Stripe
                                     </div>
                                     <div onClick={() => setMethod('cod')}
-                                        className={`${method === 'stripe' ? 'btn-dark' : 'bg-white'} !py-1 text-xs cursor-pointer`}>
+                                        className={`${method === 'cod' ? 'btn-dark' : 'btn-white'} !py-1 text-xs cursor-pointer`}>
 
                                         Cash on Delivery
                                     </div>

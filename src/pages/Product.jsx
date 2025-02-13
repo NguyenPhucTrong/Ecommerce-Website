@@ -46,7 +46,7 @@ const Product = () => {
                             {
                                 product.image.map((img, index) => (
                                     <img key={index} src={img} alt="productImg" className='object-cover aspect-square rounded-lg'
-                                        onClick={() => (img)}
+                                        onClick={() => setImg(img)}
                                     />
                                 ))
                             }

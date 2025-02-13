@@ -1,5 +1,6 @@
 import React from 'react'
 import { blogs } from '../assets/data'
+import Footer from '../components/Footer'
 
 const Blog = () => {
     return (
@@ -12,7 +13,7 @@ const Blog = () => {
 
                     {/* CONTAINER */}
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 gap-y-12 pt-6'>
-                        {blogs.slice(0, 4).map((blog) => (
+                        {blogs.map((blog) => (
                             <div key={blog.title} className='relative'>
                                 <img src={blog.image} alt="blogImg" className='rounded-xl' />
                                 {/* INFO */}
@@ -31,6 +32,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

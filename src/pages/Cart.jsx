@@ -58,7 +58,7 @@ export default function Cart() {
     return (
         <section >
             <div className="bg-primary mb-16">
-                <div className='max-padd-container py-18 '>
+                <div className='max-padd-container py-10'>
 
                     {/* Title */}
                     <div className='flexStart gap-x-4'>
@@ -111,13 +111,14 @@ export default function Cart() {
                             )
                         })}
                     </div>
-                </div>
-                <div className='flex my-20'>
-                    <div className='w-full m:w-[450px]'>
-                        <CartTotal />
-                        <button className="btn-secondary mt-7"
-                            onClick={() => navigate('/place-order')}
-                        >Process to Checkout</button>
+
+                    <div className='flex my-20'>
+                        <div className='w-full sm:w-[450px]'>
+                            <CartTotal />
+                            <button className="btn-secondary mt-7"
+                                onClick={() => navigate('/place-order')}
+                            >Process to Checkout</button>
+                        </div>
                     </div>
                 </div>
             </div>
